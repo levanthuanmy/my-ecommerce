@@ -1,0 +1,46 @@
+.banner-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+}
+
+.container-main-home-body {
+  background-color: #fff;
+  margin-top: 80vh;
+  padding-inline: 10rem;
+  padding-top: 4rem;
+}
+
+.benefit-container {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 4rem;
+  border-bottom: solid 1px rgba(177, 177, 177, 0.3);
+}
+
+.benefit-child {
+  display: flex;
+  width: 20rem;
+}
+
+.icon-benefit {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 2rem;
+}
+
+.benefit-title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.benefit-description {
+  padding-top: 1rem;
+  color: rgb(177, 177, 177);
+  font-size: 0.875rem;
+}

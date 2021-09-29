@@ -1,0 +1,20 @@
+.container-category {
+  display: flex;
+  justify-content: center;
+  background-color: beige;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.container-menu-item {
+  background-color: #fff;
+  width: 15rem;
+  height: 4rem;
+  margin-inline: 2px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+}
