@@ -101,4 +101,15 @@ export const benefitList = [
   },
 ]
 
+export const homePageHightlight = {
+  title: 'New arrival',
+  hightlight: 'Kindom Golden Watch',
+  description: 'Casual line. Short design. Impact resistant material',
+  url: ''
+}
+
 export const bannerImg = "https://images.unsplash.com/photo-1507680434567-5739c80be1ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"
+
+export const bannerProductImg = "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
+
+export const bannerAboutImg = "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"
