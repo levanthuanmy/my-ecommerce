@@ -70,13 +70,13 @@ export const menuList = [
   },
   {
     id: 4,
-    name: "Account",
-    url: '/account'
+    name: "Cart",
+    url: '/cart'
   },
   {
     id: 5,
-    name: "Cart",
-    url: '/cart'
+    name: "Account",
+    url: '/account'
   },
 ]
 

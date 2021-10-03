@@ -14,3 +14,15 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.bg-white {
+  background: #fff !important;
+}
+
+.text-secondary {
+  color: gray !important;
+}
+
+.shadow-bottom {
+  box-shadow: 0 2px 4px rgba(7, 5, 5, 0.1);
+}

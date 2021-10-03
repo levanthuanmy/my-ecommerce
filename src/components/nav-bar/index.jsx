@@ -1,18 +1,33 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { menuList } from "../../resources/dummyData"
 import "./style.css"
-import { useHistory } from "react-router-dom"
+import { useHistory, useLocation } from "react-router-dom"
 
 const NavBar = ({ children = null }) => {
   const history = useHistory()
-  const [current, setCurrent] = useState(0)
+  const location = useLocation()
+  const [current, setCurrent] = useState()
+  const [isHightlight, setIsHightlight] = useState(false)
+
   const handleClick = (menu) => {
     setCurrent(menu?.id)
     history.push(menu?.url)
   }
+
+  useEffect(() => {
+    location.pathname.includes("/account")
+      ? setIsHightlight(true)
+      : setIsHightlight(false)
+
+    setCurrent(menuList.findIndex((menu) => location.pathname === menu.url))
+  }, [location.pathname])
   return (
     <>
-      <div className="container-nav-bar">
+      <div
+        className={`container-nav-bar ${
+          isHightlight && "bg-white text-secondary shadow-bottom"
+        }`}
+      >
         <div className="container-inner-nav">
           {menuList.map(
             (menu) =>
@@ -42,7 +57,7 @@ const NavBar = ({ children = null }) => {
                     }`}
                     onClick={() => handleClick(menu)}
                   >
-                    {menu.name} {menu.id === menuList.length - 1 && `(0)`}
+                    {menu.name} {menu.id === menuList.length - 2 && `(0)`}
                   </span>
                 </div>
               )
