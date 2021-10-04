@@ -113,3 +113,5 @@ export const bannerImg = "https://images.unsplash.com/photo-1507680434567-5739c8
 export const bannerProductImg = "https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
 
 export const bannerAboutImg = "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80"
+
+export const iconGoogle = "https://cdn.icon-icons.com/icons2/2108/PNG/512/google_icon_130924.png"

@@ -1,14 +1,117 @@
 .container-account-page {
   margin-top: 5.5rem;
   padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(253, 227, 168, 0.5);
+  min-height: calc(100vh - 10.5rem);
 }
 
 .container-login {
-  margin-left: 50%;
-  transform: translateX(-50%);
   width: min(100vw, 25rem);
-  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.05);
+  height: 25rem;
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   border-radius: 0.5rem;
   padding: 1rem;
+  padding-inline: 2rem;
+  background-image: url("https://images.unsplash.com/photo-1549483249-f0b359d1e289?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1074&q=80");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center center;
+}
+
+.title-login {
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 3rem;
+  padding-top: 1rem;
+}
+
+.title-login span {
+  font-weight: medium;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+}
+
+.active {
+  border-color: #fff !important;
+}
+
+.container-form {
+  color: #fff;
+}
+
+.container-form input {
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  padding-inline: 0.75rem;
+  width: calc(100% - 1.5rem);
+}
+
+.container-form img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.container-form #signin {
+  margin-left: 0.5rem;
+  border: none;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: rgb(253, 227, 168);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+}
+
+.container-form #signin:hover {
+  background-color: rgb(255, 213, 113);
+}
+
+.container-form #externalSignin {
+  margin-right: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: rgb(66, 133, 244);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.container-form #externalSignin:hover {
+  background-color: rgb(30, 116, 255);
+}
+
+#externalSignin div {
+  margin-left: 40%;
+  transform: translateX(-50%);
+}
+
+.container-form span {
+  position: absolute;
+  text-align: left;
+  font-size: 0.875rem;
+  color: orangered;
+}
+
+.container-button {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
 }

@@ -16,6 +16,7 @@
 
 .container-inner-nav {
   display: flex;
+  align-items: center;
 }
 
 .item-left-nav {
@@ -40,4 +41,39 @@
 .title-menu-active {
   font-weight: medium;
   color: rgb(253, 227, 168);
+}
+
+.avatar-img {
+  width: 28px;
+  height: 28px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 2px white;
+  position: relative;
+  display: inline-block;
+}
+
+.name-user {
+  display: none;
+  position: absolute;
+  margin-top: 40px;
+  width: 4rem;
+  text-align: center;
+  background-color: #fff;
+  padding: 0.75rem;
+  transform: translateX(-30%);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container-sign-in-info {
+  position: relative;
+  display: inline-block;
+}
+
+.container-sign-in-info:hover .name-user {
+  display: block;
 }

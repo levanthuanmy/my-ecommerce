@@ -3,7 +3,7 @@ import { menuList } from "../../resources/dummyData"
 import "./style.css"
 import { useHistory, useLocation } from "react-router-dom"
 
-const NavBar = ({ children = null }) => {
+const NavBar = ({ currentUser, children = null }) => {
   const history = useHistory()
   const location = useLocation()
   const [current, setCurrent] = useState()
@@ -57,7 +57,24 @@ const NavBar = ({ children = null }) => {
                     }`}
                     onClick={() => handleClick(menu)}
                   >
-                    {menu.name} {menu.id === menuList.length - 2 && `(0)`}
+                    <div className="container-sign-in-info">
+                      {menu.id === 5 && currentUser ? (
+                        <>
+                          <div className="name-user">
+                            {currentUser.displayName}
+                          </div>
+                          <img
+                            src={currentUser.photoURL}
+                            alt="avatar"
+                            className="avatar-img"
+                          />
+                        </>
+                      ) : (
+                        <span>
+                          {menu.name} {menu.id === menuList.length - 2 && `(0)`}
+                        </span>
+                      )}
+                    </div>
                   </span>
                 </div>
               )
