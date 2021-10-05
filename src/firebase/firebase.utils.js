@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth"
 
 const config = {
   apiKey: "AIzaSyD99dKRu3eLtsD3hUdTqxTsuBnTjrQIL2M",
@@ -25,5 +25,15 @@ const signInWithGoogle = async (auth, provider) => {
   }
 }
 
-export { signInWithGoogle, auth, provider }
+const logOut = async (auth) => {
+  try {
+    await signOut(auth)
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+const createUserProfileDocument = async (auth, provider) => { }
+
+export { signInWithGoogle, auth, provider, logOut }
 export default app

@@ -1,12 +1,26 @@
 import React, { useState } from "react"
-import "./style.css"
-import Fade from "react-reveal/Fade"
-import { iconGoogle } from "../../resources/dummyData"
+import { useCookies } from "react-cookie"
 import { useForm } from "react-hook-form"
-import { auth, provider, signInWithGoogle } from "../../firebase/firebase.utils"
+import Fade from "react-reveal/Fade"
+import {
+  auth,
+  logOut,
+  provider,
+  signInWithGoogle,
+} from "../../firebase/firebase.utils"
+import { iconGoogle } from "../../resources/dummyData"
+import "./style.css"
 
 const AccountPage = () => {
   const [current, setCurrent] = useState(0) //0 : signin, 1 : signup
+  const [cookies, setCookie] = useCookies(["is-logged-in"])
+
+  const handleSignOut = () => {
+    if (cookies["is-logged-in"] === "true") {
+      logOut(auth)
+      setCookie("is-logged-in", false)
+    }
+  }
 
   const SignIn = () => {
     const {
@@ -20,6 +34,7 @@ const AccountPage = () => {
     const handleSignInWithGoogle = async () => {
       try {
         const res = await signInWithGoogle(auth, provider)
+        res && setCookie("is-logged-in", true)
       } catch (error) {
         console.log(error)
       }
@@ -62,7 +77,7 @@ const AccountPage = () => {
       </form>
     )
   }
-  return (
+  return cookies["is-logged-in"] === "false" ? (
     <div className="container-account-page">
       <div className="container-login">
         <div className="title-login">
@@ -91,6 +106,10 @@ const AccountPage = () => {
           )}
         </div>
       </div>
+    </div>
+  ) : (
+    <div className="container-account-page">
+      <button onClick={() => handleSignOut()}>log out</button>
     </div>
   )
 }

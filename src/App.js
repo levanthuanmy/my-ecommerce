@@ -5,14 +5,19 @@ import ProductsPage from "./pages/products"
 import AccountPage from "./pages/account"
 import { auth } from './firebase/firebase.utils'
 import React, { useEffect, useState } from "react"
+import { useCookies } from "react-cookie"
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState()
+  const [cookies, setCookie] = useCookies(["is-logged-in"])
+
 
   useEffect(() => {
     const authen = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
-      console.log(user)
+      user && setCookie("is-logged-in", true)
+      console.log(user?.email)
     })
     return () => authen
   }, [])
